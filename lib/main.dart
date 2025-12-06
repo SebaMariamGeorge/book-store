@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'src/config/app_theme.dart';
-import 'src/routes.dart';
+import 'src/screens/auth/login_screen.dart';
+import 'src/screens/dashboard/dashboard_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bookstore App',
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      initialRoute: '/',
-      onGenerateRoute: AppRoutes.generateRoute,
+      debugShowCheckedModeBanner: false,
+      home: const NeonLogin(),
+      routes: {
+        "/dashboard": (context) => const DashboardScreen(),
+      },
     );
   }
 }
